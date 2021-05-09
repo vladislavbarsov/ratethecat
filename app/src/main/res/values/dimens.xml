@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="recyclerPadding">4dp</dimen>
+    <dimen name="ratingPagePadding">10dp</dimen>
+    <dimen name="ratingPageImageHeight">300dp</dimen>
+    <dimen name="ratingPageImageMarginTop">10dp</dimen>
+    <dimen name="ratingButtonWidth">132dp</dimen>
+    <dimen name="ratingButtonHeight">126dp</dimen>
+    <dimen name="ratingButtonMarginTop">20dp</dimen>
+</resources>

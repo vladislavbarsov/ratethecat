@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="android.example.ratethecat.rating.RatingPageViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/ratingPagePadding">
+
+        <ImageView
+            android:id="@+id/cat_image"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/ratingPageImageHeight"
+            android:layout_marginTop="@dimen/ratingPageImageMarginTop"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic"
+            app:imageUrl="@{viewModel.selectedProperty.url}"/>
+
+        <ImageView
+            android:id="@+id/thumbsup"
+            android:layout_width="@dimen/ratingButtonWidth"
+            android:layout_height="@dimen/ratingButtonHeight"
+            android:layout_marginTop="@dimen/ratingButtonMarginTop"
+            android:src="@drawable/ic_baseline_thumb_up_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cat_image"
+            app:likeImage="@{viewModel.selectedProperty.include_vote}"
+            android:onClick="@{() -> viewModel.onLikeClicked()}"/>
+
+        <ImageView
+            android:id="@+id/thumbsdown"
+            android:layout_width="@dimen/ratingButtonWidth"
+            android:layout_height="@dimen/ratingButtonHeight"
+            android:layout_marginTop="@dimen/ratingButtonMarginTop"
+            android:src="@drawable/ic_baseline_thumb_down_24"
+            app:layout_constraintTop_toBottomOf="@+id/cat_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:dislikeImage="@{viewModel.selectedProperty.include_vote}"
+            android:onClick="@{() -> viewModel.onDislikeClicked()}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

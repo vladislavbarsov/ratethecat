@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/listFragment"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="android.example.ratethecat.list.ListFragment"
+        android:label="ListFragment"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_listFragment_to_ratingPageFragment"
+            app:destination="@id/ratingPageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ratingPageFragment"
+        android:name="android.example.ratethecat.rating.RatingPageFragment"
+        android:label="fragment_rating_page"
+        tools:layout="@layout/fragment_rating_page" >
+        <argument
+            android:name="selectedProperty"
+            app:argType="android.example.ratethecat.network.CatProperty">
+        </argument>
+    </fragment>
+
+</navigation>
